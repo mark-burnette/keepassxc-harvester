@@ -14,7 +14,12 @@ make
 3. Run keepassxc
 4. Load the library with your choice of injector. I have included one given [here](https://aixxe.net/2016/09/shared-library-injection).
 ```
-sudo ./inject.sh keepassxc keepass_harvester.so
+sudo ./inject.sh keepassxc keepassxc_harvester.so
+```
+5. Enter a master password and attempt to unlock a database. The password will be written to a file in _/tmp_ in the format _/tmp/password\_XXXXXX_.
+6. Optional: Convert the file from UTF-16LE to UTF8
+```
+iconv -f UTF-16LE -t UTF8 [file]
 ```
 
 ## Roadmap
